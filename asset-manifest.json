@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/aungkokodev/todo-test.git/static/css/main.8d22617d.css",
+    "main.js": "/aungkokodev/todo-test.git/static/js/main.e1b14b23.js",
+    "index.html": "/aungkokodev/todo-test.git/index.html",
+    "main.8d22617d.css.map": "/aungkokodev/todo-test.git/static/css/main.8d22617d.css.map",
+    "main.e1b14b23.js.map": "/aungkokodev/todo-test.git/static/js/main.e1b14b23.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d22617d.css",
+    "static/js/main.e1b14b23.js"
+  ]
+}
