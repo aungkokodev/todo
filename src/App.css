@@ -1,0 +1,322 @@
+:root {
+    --light-bg: rgb(219, 216, 224);
+    --light-sf: rgb(255, 255, 255);
+    --light-f: #000000;
+    --dark-bg: rgb(24, 24, 36);
+    --dark-sf: rgb(37, 39, 60);
+    --dark-f: #ffffff;
+    --color-1: dodgerblue;
+    --color-2: orange;
+    --color-3: grey;
+    --h: 3rem;
+    --s: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.theme-light {
+    background-color: var(--light-bg);
+    color: var(--light-f);
+}
+
+.theme-dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-f);
+}
+
+.theme-light .addtask,
+.theme-light .task,
+.theme-light .filter {
+    background-color: var(--light-sf);
+}
+
+.theme-dark .addtask,
+.theme-dark .task,
+.theme-dark .filter {
+    background-color: var(--dark-sf);
+}
+
+.theme-light input,
+.theme-light button {
+    color: var(--light-f);
+}
+
+.theme-dark input,
+.theme-dark button {
+    color: var(--dark-f);
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+    background: transparent;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--color-1) !important;
+}
+
+i,
+button,
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    color: var(--color-3);
+}
+
+/* */
+.bg {
+    width: 100%;
+    height: 45vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.theme-light .bg {
+    background: linear-gradient(45deg, red, var(--color-2), yellow);
+}
+
+.theme-dark .bg {
+    background: linear-gradient(45deg, blue, var(--color-1), aqua);
+}
+
+/* */
+/* Root */
+
+.root {
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+    position: relative;
+}
+
+/* Root */
+/* Panel */
+
+.panel {
+    min-width: 230px;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Panel */
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.header > i {
+    text-shadow: 1px 1px 5px var(--s);
+    transition: transform 0.2s;
+}
+
+.header > i:hover {
+    transform: rotate(360deg);
+}
+
+.header > i:active {
+    transform: scale(0.8);
+}
+
+.header > i[class*="sun"] {
+    color: var(--color-2);
+}
+
+.header > i[class*="moon"] {
+    color: var(--color-1);
+}
+
+/* Header */
+/* Add task */
+
+.addtask {
+    position: relative;
+    margin: var(--h) 0;
+    height: var(--h);
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 10px var(--s);
+}
+
+.addtask > i {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    box-shadow: 1px 1px 5px var(--s);
+    transition: transform 0.2s;
+}
+
+.addtask > i:hover {
+    transform: rotate(90deg);
+}
+
+.addtask > i:active {
+    transform: scale(0.8) rotate(90deg);
+}
+
+.theme-dark .addtask > i {
+    color: var(--color-1);
+}
+
+.theme-light .addtask > i {
+    color: var(--color-2);
+}
+
+/* Add task */
+/* Task */
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    min-height: var(--h);
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+    box-shadow: 5px 5px 10px var(--s);
+}
+
+.task:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.task > span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    word-break: break-all;
+}
+
+.task > span:first-child {
+    flex: 3;
+}
+
+.task input[type="text"] {
+    padding: 0;
+}
+
+.task i {
+    transition: transform 0.1s;
+}
+
+.theme-light .task i[class*="floppy"],
+.theme-dark .task i[class*="edit"] {
+    color: var(--color-1);
+}
+
+.theme-light .task i[class*="edit"],
+.theme-dark .task i[class*="floppy"] {
+    color: var(--color-2);
+}
+
+.task i[class*="trash"] {
+    color: red;
+}
+
+.task i:hover {
+    animation: shake 0.1s;
+}
+
+.task i:active {
+    transform: scale(0.8);
+}
+
+/* Task */
+/* Filter */
+
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: var(--h);
+    padding: 1rem;
+    font-size: 0.8rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 5px 5px 10px var(--s);
+}
+
+.filter > span:nth-child(2) {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Filter */
+/* Animation => w3schools */
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+/* Scroll */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-1);
+}
